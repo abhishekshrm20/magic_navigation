@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffcf23;
+}
+
+.menu {
+    width: 400px;
+    height: 70px;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.menu ul {
+    display: flex;
+    width: 350px;
+}
+
+.menu ul li {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+.menu ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    font-weight: 900;
+}
+
+.menu ul li a .icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: #ffcf23;
+}
+
+.menu ul li a .menuname {
+    position: absolute;
+    color: #ffcf23;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.menu ul li.active a .icon {
+    transform: translateY(-32px);
+}
+
+.menu ul li.active a .menuname {
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+.indiator {
+    position: absolute;
+    top: -50%;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    border: 10px solid #ffcf23;
+}
+
+.indiator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -24px;
+    width: 20px;
+    height: 20px;
+    background-color: #ffcf2300;
+    border-top-right-radius: 30px;
+    box-shadow: 0px -14px 0 0 #ffcf23;
+}
+
+.indiator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -24px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 0, 0, 0);
+    border-top-left-radius: 30px;
+    box-shadow: 0px -10px 0 0 #ffcf23;
+}
+
+.menu ul li:nth-child(1).active~.indiator {
+    transform: translateX(calc(70px * 0));
+}
+
+.menu ul li:nth-child(2).active~.indiator {
+    transform: translateX(calc(70px * 1));
+}
+
+.menu ul li:nth-child(3).active~.indiator {
+    transform: translateX(calc(70px * 2));
+}
+
+.menu ul li:nth-child(4).active~.indiator {
+    transform: translateX(calc(70px * 3));
+}
+
+.menu ul li:nth-child(5).active~.indiator {
+    transform: translateX(calc(70px * 4));
+}
